@@ -1,0 +1,7 @@
+{
+  "project_name": "AI Chatbot with Memory",
+  "tool": "n8n",
+  "description": "AI chatbot workflow integrating Gemini model with contextual memory.",
+  "status": "Pending export from n8n",
+  "version": "1.0"
+}
