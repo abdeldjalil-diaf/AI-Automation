@@ -1,4 +1,98 @@
 {
-  "project_name": "Telegram Automation Bot",
-  "status": "Pending export from n8n"
+  "name": "telegram text",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f93a62a4-08d2-411d-95b8-e9e598eda2b6",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://zenquotes.io/api/random",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "5d61bcdc-2226-44bc-9801-02987b5b5db4",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "chatId": "6505834654",
+        "text": "={{ $json.q }}",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "1c1bbe1c-0935-474a-8213-210f63833d7f",
+      "name": "Send a text message",
+      "webhookId": "7b719c72-6a95-4e8b-ab58-88d3b005284a",
+      "credentials": {
+        "telegramApi": {
+          "id": "WBotdIRHMfdAAmry",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "7e6c037f-8c95-4c11-8329-169081acc01e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bb2a5dc595f428785b97e5df660dc800fe0d7e66c3ac0830c548d4a5ed8b1311"
+  },
+  "id": "o9rOm71U3cgUJ068",
+  "tags": []
 }
