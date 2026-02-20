@@ -1,130 +1,102 @@
-# AI & Automation Portfolio
+🚀 AI Automation with n8n
 
-This repository showcases AI-powered automation systems built using n8n, large language models (LLMs), and API integrations.
+This repository contains three AI-powered automation workflows built using n8n.
+Each workflow solves a real-world automation problem using AI and external integrations.
 
-The projects demonstrate workflow orchestration, document processing, AI-based text analysis, and structured data extraction.
+🧠 1. AI Chatbot with Memory (Gemini)
+Overview
 
----
+An independent AI chatbot powered by Google Gemini that communicates naturally with users.
+It supports contextual memory, allowing it to remember previous parts of the conversation.
 
-## 🚀 About This Repository
+Features
 
-The goal of this portfolio is to demonstrate practical skills in:
+Powered by Gemini model
 
-- Automation engineering
-- AI integration in real-world workflows
-- REST API usage
-- Email and document processing
-- Structured data generation
-- Backend logic design
-- System architecture thinking
+Contextual memory handling
 
-All workflows are built using n8n and integrated with external AI models and APIs.
+Works independently via webhook
 
----
+Can be shared using a public link
 
-## 🛠 Technologies Used
+Natural language conversation
 
-- n8n (Workflow Automation)
-- REST APIs
-- Gmail API
-- Telegram Bot API
-- PDF Text Extraction
-- LLM Chains
-- OpenRouter / Google Gemini
-- Structured Output Parsing
-- JSON Data Processing
-- Git & GitHub
+Use Case
 
----
+Personal AI assistant
 
-# 📂 Projects
+Customer support bot
 
----
+Smart website chatbot
 
-## 1️⃣ AI Chatbot with Memory (Gemini)
 
-An AI-powered chatbot that maintains contextual memory across interactions.
 
-### 🔹 Features
+📩 2. Gmail CV Parser
+Overview
 
-- Chat trigger-based workflow
-- AI Agent integration
-- Google Gemini model
-- Session-based memory
-- Context-aware responses
+An automated workflow that reads incoming Gmail messages, extracts CV attachments (PDF), and analyzes them using AI.
 
-### 🔹 Architecture
+Features
 
-User → Chat Trigger → AI Agent → Gemini Model → Response
+Gmail trigger (monitors incoming emails)
 
-### 🔹 Use Case
+Accepts PDF CV files (can be extended to Word)
 
-Demonstrates conversational AI integration inside an automated workflow system.
+Extracts key information:
 
----
+Skills
 
-## 2️⃣ Telegram Automation Bot
+Experience
 
-An automated messaging system integrating Telegram with APIs and AI processing.
+Important candidate data
 
-### 🔹 Features
+Outputs structured results as a clean table
 
-- Telegram message trigger
-- Scheduled automation
-- External API requests
-- Automated formatted responses
-- Optional AI-generated replies
+Use Case
 
-### 🔹 Workflow Process
+HR automation
 
-1. Telegram trigger or scheduled trigger
-2. HTTP request to external API
-3. Data processing
-4. Send response back to Telegram
+CV screening
 
-### 🔹 Architecture
+Automated recruitment processing
 
-Telegram → n8n Trigger → API Request → Processing → Telegram Response
 
-### 🔹 Use Case
 
-Shows real-time messaging automation and API integration inside a workflow system.
+🤖 3. Daily Motivational Telegram Bot
+Overview
 
----
+A Telegram bot that fetches motivational quotes from a specific website and sends them automatically every day at a scheduled time.
 
-## 3️⃣ AI CV Parser from Gmail
+Features
 
-An intelligent automation system that extracts structured information from CVs received via Gmail.
+Scrapes quotes from a target website
 
-### 🔹 Workflow Process
+Daily scheduled trigger
 
-1. Gmail Trigger detects a new email
-2. Extract PDF attachment
-3. Extract raw text from CV
-4. Send text to LLM for analysis
-5. Generate structured JSON output
+Sends motivational messages automatically
 
-### 🔹 Extracted Information
+Fully automated workflow
 
-- Full Name
-- Email Address
-- Phone Number
-- Skills
-- Education
-- Work Experience
+Use Case
 
-### 🔹 Architecture
+Community engagement
 
-Gmail → Extract PDF → Text Processing → LLM Analysis → Structured Data Output
+Daily inspiration channels
 
-### 🔹 Example Output
+Automated content delivery
 
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+39 123 456 789",
-  "skills": ["Python", "Machine Learning", "Data Analysis"],
-  "education": "Master in Computer Science",
-  "experience": "2 years as Data Analyst"
-}
+
+
+🛠 Technologies Used
+
+n8n
+
+Google Gemini
+
+Gmail API
+
+Telegram Bot API
+
+Web scraping
+
+JSON-based workflow exports
