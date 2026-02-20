@@ -1,7 +1,110 @@
 {
-  "project_name": "AI Chatbot with Memory",
-  "tool": "n8n",
-  "description": "AI chatbot workflow integrating Gemini model with contextual memory.",
-  "status": "Pending export from n8n",
-  "version": "1.0"
+  "name": "chat bot",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        -32
+      ],
+      "id": "081f3ec8-0269-4c8d-87c9-5c36f58b2708",
+      "name": "When chat message received",
+      "webhookId": "d7b18dfb-dd11-4d43-9678-037266c96f92"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        -16
+      ],
+      "id": "9c47aca0-2ecb-480b-aee7-2435ee4d1742",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        80,
+        160
+      ],
+      "id": "513c32be-7778-404b-a2fa-071b4e9a5c4d",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "v3CnOWPdN3Hrdo19",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        176
+      ],
+      "id": "c2f8ffcc-3bb2-47da-b794-f5ebb784ca40",
+      "name": "Simple Memory"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ff64e0c9-540d-4590-beda-5e3745d959ae",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "bb2a5dc595f428785b97e5df660dc800fe0d7e66c3ac0830c548d4a5ed8b1311"
+  },
+  "id": "v4b9bXRo8I7FJSaS",
+  "tags": []
 }
